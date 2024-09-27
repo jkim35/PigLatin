@@ -82,6 +82,17 @@ class PigLatin
 		}
 		return x;
 	}  
+	public static String convertSentence(String s){
+		int i=s.indexOf(" ");
+		String w=s.substring(0,i);
+		w.convertWord();
+		int n=s.indexOf(" ");
+		String p=s.substring((i+1),n);
+		p.convertWord();
+		o=s.substring(n+1);
+		o.convertWord();
+		return w+" "+p+" "+o;
+	}
 	public static void main (String[] args)
 	{
       	Scanner input = new Scanner(System.in);
