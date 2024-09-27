@@ -83,22 +83,23 @@ class PigLatin
 		return x;
 	}  
 	public static String convertSentence(String s){
-		int i=s.indexOf(" ");
-		String w=s.substring(0,i);
-		w.convertWord();
+		int indexVariable=s.indexOf(" ");
+		String word=s.substring(0,indexVariable);
+		String converted= " ";
+		converted = convertWord(word);
 		int n=s.indexOf(" ");
-		String p=s.substring((i+1),n);
-		p.convertWord();
-		o=s.substring(n+1);
-		o.convertWord();
-		return w+" "+p+" "+o;
+		String p = s.substring((indexVariable+1),n);
+		String newWord= convertWord(p);
+		String l = s.substring(n+1);
+		l=convertWord(l);
+		return converted+" "+p+" "+l;
 	}
 	public static void main (String[] args)
 	{
       	Scanner input = new Scanner(System.in);
 		System.out.print("Enter a string: ");
 		String str = input.nextLine();	
-		String piggie = PigLatin.convertWord(str);
+		String piggie =convertSentence(str);
 		System.out.println();
 		System.out.println("Converted word: " + piggie);
 	}
