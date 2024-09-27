@@ -54,7 +54,7 @@ class PigLatin
 		}
 		if((x==false) && (k == false)){
 			n=y.substring(2);
-			n=(n+(s.substring(0,2))+"ay");
+			n=(n+(y.substring(0,2))+"ay");
 		}
 		return n;
 	}
