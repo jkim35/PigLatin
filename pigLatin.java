@@ -85,14 +85,16 @@ class PigLatin
 	public static String convertSentence(String s){
 		int indexVariable=s.indexOf(" ");
 		String word=s.substring(0,indexVariable);
+		s=s.substring((indexVariable+1));
 		String converted= " ";
 		converted = convertWord(word);
 		int n=s.indexOf(" ");
-		String p = s.substring((indexVariable+1),n);
-		String newWord= convertWord(p);
+		word = s.substring(0,n);
+		String newWord= convertWord(word);
+		s = s.substring(n+1);
 		String l = s.substring(n+1);
 		l=convertWord(l);
-		return converted+" "+p+" "+l;
+		return converted+" "+newWord+" "+l;
 	}
 	public static void main (String[] args)
 	{
