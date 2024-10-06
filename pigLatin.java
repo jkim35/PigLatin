@@ -80,21 +80,29 @@ class PigLatin
 			
 			
 		}
+		x = x.toLowerCase();
 		return x;
 	}  
 	public static String convertSentence(String s){
 		int indexVariable=s.indexOf(" ");
+		if (indexVariable != -1){
 		String word=s.substring(0,indexVariable);
+		
 		s=s.substring((indexVariable+1));
-		String converted= " ";
+		String converted;
 		converted = convertWord(word);
 		int n=s.indexOf(" ");
 		word = s.substring(0,n);
 		String newWord= convertWord(word);
 		s = s.substring(n+1);
-		String l = s.substring(n+1);
-		l=convertWord(l);
-		return converted+" "+newWord+" "+l;
+		//String l = s.substring(n+1);
+		//l=convertWord(l);
+		return converted+" "+newWord+" "+s;
+		}else{
+			String q = convertWord(s);
+			return q;
+		}
+		
 	}
 	public static void main (String[] args)
 	{
